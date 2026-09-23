@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /commerce-disclosure.html
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /contact.html
+Sitemap: https://haya-studio.github.io/geo-checker-/sitemap.xml
