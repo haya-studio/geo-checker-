@@ -5,8 +5,8 @@
 // ==========================================
 const HAYA_CONFIG = {
     // --- サイト・ブランド情報 ---
-    SITE_NAME: "[SITE NAME]",
-    BRAND_NAME: "[BRAND NAME]",
+    SITE_NAME: "[GEO Content Checker]",
+    BRAND_NAME: "[HAYA Web Services]",
     COPYRIGHT_YEAR: "2026",
     
     // --- 連絡先・フォーム ---
