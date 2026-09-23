@@ -1,0 +1,10 @@
+/* GEO Content Checker 固有CSS */
+.result-area{margin-top:30px;padding-top:30px;border-top:1px dashed var(--border-color)}
+.score-card{background:var(--bg-color);padding:20px;border-radius:4px;margin-bottom:20px}
+.total-score{font-size:1.5rem;font-weight:bold;color:var(--primary-color);margin-bottom:15px;text-align:center}
+.total-score span{font-size:2rem;color:var(--accent-color)}
+.score-details{list-style:none}.score-details li{padding:8px 0;border-bottom:1px solid var(--border-color);display:flex;justify-content:space-between}.score-details li:last-child{border-bottom:none}
+.feedback ul{padding-left:20px}.feedback li{margin-bottom:10px}
+.price{font-size:1.8rem;font-weight:bold;color:var(--primary-color);text-align:center;margin-bottom:20px}.price span{font-size:1rem;font-weight:normal}
+.premium-card ul{margin-left:20px;margin-bottom:20px}.flow-box{background:#fff;padding:20px;border-radius:4px;margin-bottom:20px;border:1px solid var(--border-color)}.flow-box ol{margin-left:20px;margin-top:10px}
+.geo-report{margin-top:25px;padding:20px;background:#fff;border:1px solid var(--border-color);border-radius:6px}.geo-report h4{margin-top:18px}.geo-report h4:first-child{margin-top:0}.geo-report ul,.geo-report ol{padding-left:20px}.geo-report li{margin-bottom:8px}

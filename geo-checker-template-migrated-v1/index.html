@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEO Content Checker | AI検索向け文章簡易診断ツール</title>
+    <meta name="description" content="Webサイトの文章がPerplexityやChatGPTなどのAI検索で整理されやすい形か、独自ルールで簡易診断する無料ツールです。">
+    <link rel="canonical" href="https://haya-studio.github.io/geo-checker-/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="GEO Content Checker | AI検索向け文章簡易診断ツール">
+    <meta property="og:description" content="Webサイトの文章がPerplexityやChatGPTなどのAI検索で整理されやすい形か、独自ルールで簡易診断する無料ツールです。">
+    <meta property="og:url" content="https://haya-studio.github.io/geo-checker-/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/common/common.css">
+    <link rel="stylesheet" href="assets/tool/tool.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" data-config="SITE_NAME"></a>
+            <p class="header-subtitle">AI検索向け文章簡易診断ツール</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>あなたのWebサイトの文章は、AIに伝わりやすいですか？</h2>
+            <p>PerplexityやChatGPTなどのAI検索エンジンが情報を整理・抽出しやすい構造になっているかを、独自の簡易ルールでチェックします。</p>
+            <div class="disclaimer">
+                ※この診断は独自ルールによる簡易スコアであり、Google、Perplexity、OpenAI等の公式評価、順位、引用判定ではありません。検索順位の向上や引用を保証するものではありません。
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <h2>無料簡易診断</h2>
+            <p>診断したいWebサイトの文章（会社概要やサービス紹介など）を下に入力してください。（最低30文字以上推奨）</p>
+            <p class="note">※入力された文章はブラウザ内でのみ処理され、外部サーバーやAIには送信されません。</p>
+            
+            <div class="form-group">
+                <label for="text-input" class="visually-hidden">診断する文章を入力</label>
+                <textarea id="text-input" rows="8" placeholder="ここにWebサイトの文章を貼り付けてください"></textarea>
+            </div>
+            <button id="check-btn" class="btn btn-primary" type="button">診断する</button>
+
+            <div id="result-area" class="result-area hidden" aria-live="polite">
+                <h3>診断結果</h3>
+                <div class="score-card">
+                    <div class="total-score">総合スコア: <span id="score-total">0</span> / 30点</div>
+                    <ul class="score-details">
+                        <li>1次情報の具体性: <span id="score-1">0</span> / 10点</li>
+                        <li>構造化・Q&A適性: <span id="score-2">0</span> / 10点</li>
+                        <li>客観性・事実記述: <span id="score-3">0</span> / 10点</li>
+                    </ul>
+                </div>
+                <div class="feedback">
+                    <h4>改善のポイント</h4>
+                    <ul id="feedback-list"></ul>
+                </div>
+                <div class="action-area">
+                    <button id="generate-report-btn" class="btn btn-accent" type="button">自動改善レポートを生成</button>
+                </div>
+                <div id="report-area" class="hidden" aria-live="polite">
+                    <div id="report-content"></div>
+                    <div class="action-area">
+                        <button id="copy-report-btn" class="btn btn-secondary" type="button">レポートをコピー</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="premium-section" id="premium">
+            <h2>【有料サービス】AI検索向けリライト改善レポート</h2>
+            <div class="premium-card">
+                <div class="premium-price">価格: <span data-config="PREMIUM_PRICE"></span>円<span>（税込 / 買い切り）</span></div>
+                <p>診断結果をもとに、より実践的な改善案をご希望の方向けのレポート作成サービスです。</p>
+                <ul>
+                    <li>対象文章をもとにした具体的なリライト原稿の作成</li>
+                    <li>検索される疑問を意識したQ&A構成案の提示</li>
+                    <li>見出しおよび数値・一次情報・事実情報の見せ方改善案</li>
+                </ul>
+                <div class="flow-box">
+                    <strong>■ お申し込みから納品までの流れ</strong>
+                    <ol>
+                        <li>下記ボタンよりお申し込みフォームへ入力</li>
+                        <li>案内されるStripe決済ページにてお支払い（前払い）</li>
+                        <li>決済完了確認後、レポート作成開始</li>
+                        <li>通常48時間以内を目安にメールにて納品</li>
+                    </ol>
+                </div>
+                <div class="disclaimer">
+                    ※本レポートは参考情報の提供を目的としており、AI検索への掲載、引用、検索順位、アクセス数、売上等の成果を保証するものではありません。
+                </div>
+                <div class="action-area">
+                    <a href="#" id="common-premium-btn" target="_blank" rel="noopener noreferrer" class="btn btn-accent">詳細レポートを申し込む</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>よくあるご質問 (FAQ)</h2>
+            <dl class="faq-list">
+                <dt>Q. 入力した文章がどこかに公開されたり保存されたりしませんか？</dt>
+                <dd>A. 無料診断はすべてお客様のブラウザ上（JavaScript）で動作します。当サイトのサーバーや外部のAIサービスにデータが送信されることはありません。</dd>
+                
+                <dt>Q. 高得点が出れば、必ずAI検索で引用されますか？</dt>
+                <dd>A. いいえ。本ツールは独自の基準で「AIが情報を整理しやすいか」を簡易的に判定する目安であり、実際のAIの動作や引用結果を保証するものではありません。</dd>
+
+                <dt>Q. 有料レポートの支払方法は何がありますか？</dt>
+                <dd>A. クレジットカード決済（Stripe）をご利用いただけます。お申し込み後に決済リンクをご案内いたします。</dd>
+            </dl>
+        </section>
+
+        <section class="request-section">
+            <h2>こんな機能・ツールがほしい？</h2>
+            <p>こんな機能があったら便利、こんなツールを作ってほしい、などのアイデアを送れます。今後の改善や新しいツール開発の参考にします。</p>
+            <div class="action-area">
+                <button id="common-request-btn" class="btn btn-secondary" type="button">機能・ツールをリクエストする</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="commerce-disclosure.html">特定商取引法に基づく表記</a></li>
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="terms.html">利用規約</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+            <p class="copyright">&copy; <span data-config="COPYRIGHT_YEAR"></span> <span data-config="BRAND_NAME"></span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="assets/common/common.js"></script>
+    <script src="assets/tool/tool.js"></script>
+</body>
+</html>
