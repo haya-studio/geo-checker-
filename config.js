@@ -11,7 +11,7 @@ const HAYA_CONFIG = {
     
     // --- 連絡先・フォーム ---
     CONTACT_EMAIL: "contact@example.com",
-    REQUEST_FORM_URL: "https://forms.gle/XXXXX",
+    REQUEST_FORM_URL: "https://forms.gle/fnvTghAcARPegRuv6",
     
     // --- 有料サービス (Premium) 設定 ---
     PREMIUM_PRICE: "1,480",
